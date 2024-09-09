@@ -47,24 +47,29 @@
             Products
         {% endif %}
             </h1>
-            
-            {% for product in products %}
-            <div class="items">
-                <a href="{{product.get_absolute_url}}">
-                    <img src="
-                    {% if product.image %}
-                        {{ product.image.url }}
-                    {% else %}
-                    {% static 'img/no_image.png' %}
-                    {% endif %}
-                        " alt="{{product.name}}">
-                </a>
-                <a href="{{product.get_absolute_url}}"> {{product.name}} </a>
-                <span> ${{product.price}} </span>
+            <div class="product-list">
+
+                {% for product in products %}
+                <div class="product-items">
+                    <a href="{{product.get_absolute_url}}">
+                        <img src="
+                        {% if product.image %}
+                            {{ product.image.url }}
+                        {% else %}
+                        {% static 'img/no_image.png' %}
+                        {% endif %}
+                            " alt="{{product.name}}" class="product-img">
+                    </a>
+                    <a href="{{product.get_absolute_url}}" class="product-name"> {{product.name}} </a>
+                    <div class="product-bottom-bar">
+                        <span class="product-price"> ${{product.price}} </span>
+                        <a href="#" class="add-to-cart"><i class="bi bi-cart3 cart"></i> Add</a>
+                    </div>
+                </div>
+                    
+                {% endfor %}
+                    
             </div>
-                
-            {% endfor %}
-                
     </div>
 {% endblock main %}
     
