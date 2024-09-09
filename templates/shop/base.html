@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    
+    {% block style %}
+        
+    {% endblock style %}
+        
+    <title>{% block title %} {% endblock title %} | LoopersShop</title>
+  </head>
+  <body>
+    <div class="top-header">Top Header</div>
+    <div class="searchbar">SearchBar</div>
+    <div class="navbar">Navbar</div>
+    <div class="main">{% block main %} {% endblock main %}</div>
+
+    {% block bottom %} {% endblock bottom %}
+  </body>
+</html>
