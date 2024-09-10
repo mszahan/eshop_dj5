@@ -1,0 +1,83 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+
+
+{% block style %}
+<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+{% endblock style %}
+    
+
+{% block title %}
+    {{product.name}}
+{% endblock title %}
+
+
+{% block main %}
+
+<section
+id="main-carousel"
+class="splide"
+aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel."
+>
+<div class="splide__track">
+      <ul class="splide__list">
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/05/12/51/cat-9024872_1280.jpg" alt="image1">
+          </li>
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/05/15/29/swans-9025237_1280.jpg" alt="image2">
+          </li>
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/03/11/12/ai-generated-9019059_1280.jpg" alt="image3">
+          </li>
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/05/00/25/ai-generated-9023102_1280.jpg" alt="image1">
+          </li>
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/02/06/08/trees-9015687_1280.jpg" alt="image2">
+          </li>
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/05/15/22/ai-generated-9025223_1280.jpg" alt="image3">
+          </li>
+      </ul>
+</div>
+</section>
+<section
+id="thumbnail-carousel"
+class="splide"
+aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel."
+>
+<div class="splide__track">
+      <ul class="splide__list">
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/05/12/51/cat-9024872_1280.jpg" alt="image1">
+          </li>
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/05/15/29/swans-9025237_1280.jpg" alt="image2">
+          </li>
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/03/11/12/ai-generated-9019059_1280.jpg" alt="image3">
+          </li>
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/05/00/25/ai-generated-9023102_1280.jpg" alt="image1">
+          </li>
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/02/06/08/trees-9015687_1280.jpg" alt="image2">
+          </li>
+          <li class="splide__slide">
+              <img src="https://cdn.pixabay.com/photo/2024/09/05/15/22/ai-generated-9025223_1280.jpg" alt="image3">
+          </li>
+      </ul>
+</div>
+</section>
+{% endblock main %}
+    
+
+
+{% block bottom %}
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="{% static 'js/productImageSlide.js' %}"></script>
+{% endblock bottom %}
+    
