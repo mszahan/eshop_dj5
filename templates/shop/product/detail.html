@@ -75,7 +75,32 @@
         </section>
     </div>
     <div class="product-detail">
-        <h1>Burger</h1>
+        <h2>
+            <a href="{{product.category.get_absolute_url}}">
+                {{product.category}}
+            </a>
+        </h2>
+        <h1>{{product.name}}</h1>
+        <p>${{product.price}}</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, molestiae 
+            ut quaerat sint magni obcaecati similique vel temporibus et doloribus 
+            iure deserunt possimus maiores! Commodi.</p>
+
+        <h3>Variations</h3>
+        <div class="variations">
+            <a href="#">Medium</a>
+            <a href="#">Large</a>
+            <a href="#">XL</a>
+        </div>
+        <p>2535 products available</p>
+        <p class="cart-number">2 items selected</p>
+
+        <div class="action">
+            <a href="#">Add to cart</a>
+            <a href="#">Buy now</a>
+            <a href="#">Add to favorite</a>
+        </div>
+
     </div>
 </div>
 
