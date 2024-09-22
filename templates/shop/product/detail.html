@@ -16,6 +16,13 @@
 
 {% block main %}
 <div class="product">
+    
+    {% with product.galleries.all as galleries %}
+        
+        {% if galleries|length > 1 %}
+            
+        
+            
     <div class="product-gallery">
         <section
         id="main-carousel"
@@ -24,24 +31,14 @@
         >
         <div class="splide__track">
               <ul class="splide__list">
-                  <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/05/12/51/cat-9024872_1280.jpg" alt="image1">
-                  </li>
-                  <!-- <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/05/15/29/swans-9025237_1280.jpg" alt="image2">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/03/11/12/ai-generated-9019059_1280.jpg" alt="image3">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/05/00/25/ai-generated-9023102_1280.jpg" alt="image1">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/02/06/08/trees-9015687_1280.jpg" alt="image2">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/05/15/22/ai-generated-9025223_1280.jpg" alt="image3">
-                  </li> -->
+                
+                {% for gallery in galleries %}
+                <li class="splide__slide">
+                    <img src="{{gallery.image.url}}" alt="{{gallery.image.name}}">
+                </li>                   
+                {% endfor %}
+                    
+
               </ul>
         </div>
         </section>
@@ -52,28 +49,28 @@
         >
         <div class="splide__track">
               <ul class="splide__list">
+                {% for gallery in galleries %}
                   <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/05/12/51/cat-9024872_1280.jpg" alt="image1">
+                      <img src="{{gallery.image.url}}" alt="{{gallery.image.name}}">
                   </li>
-                  <!-- <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/05/15/29/swans-9025237_1280.jpg" alt="image2">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/03/11/12/ai-generated-9019059_1280.jpg" alt="image3">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/05/00/25/ai-generated-9023102_1280.jpg" alt="image1">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/02/06/08/trees-9015687_1280.jpg" alt="image2">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="https://cdn.pixabay.com/photo/2024/09/05/15/22/ai-generated-9025223_1280.jpg" alt="image3">
-                  </li> -->
+                {% endfor %}
               </ul>
         </div>
         </section>
     </div>
+
+    {% elif galleries|length == 1 %}
+
+    <div class="product-gallery">
+        <img src="{{galleries.0.image.url}}" alt="{{galleries.0.image.name}}">
+    </div>
+
+    {% else %}
+    <div class="product-gallery">
+        <img src="{% static 'img/no_image.jpg' %}" alt="no image available">
+    </div>
+    {% endif %}
+    {% endwith %}
     <div class="product-detail">
         <h2>
             <a href="{{product.category.get_absolute_url}}">
