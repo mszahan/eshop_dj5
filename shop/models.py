@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from tinymce.models import HTMLField
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
@@ -24,7 +25,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     image = models.ImageField(upload_to='porducts/%Y/%m', blank=True)
-    description = models.TextField(blank=True)
+    description = HTMLField(blank=True)
     short_description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)

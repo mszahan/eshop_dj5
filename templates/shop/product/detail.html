@@ -82,9 +82,7 @@
         </h2>
         <h1>{{product.name}}</h1>
         <p>${{product.price}}</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, molestiae 
-            ut quaerat sint magni obcaecati similique vel temporibus et doloribus 
-            iure deserunt possimus maiores! Commodi.</p>
+        <p>{{product.short_description}}</p>
 
         <h3>Variations</h3>
         <div class="variations">
@@ -102,6 +100,10 @@
         </div>
 
     </div>
+</div>
+
+<div class="description">
+    {{product.description|safe}}
 </div>
 
 {% endblock main %}
