@@ -64,7 +64,7 @@
                     </a>
                     <a href="{{product.get_absolute_url}}" class="product-name"> {{product.name}} </a>
                     <div class="product-bottom-bar">
-                        <span class="product-price"> ${{product.price}} </span>
+                        <span class="product-price"> ${{product.variations.all.0.price}} </span>
                         <a href="#" class="add-to-cart"><i class="bi bi-cart3 cart"></i> Add</a>
                     </div>
                 </div>

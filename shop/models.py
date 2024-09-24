@@ -28,7 +28,7 @@ class Product(models.Model):
     # image = models.ImageField(upload_to='porducts/%Y/%m', blank=True)
     description = HTMLField(blank=True)
     short_description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    # price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=False)
     updated = models.DateTimeField(auto_now=True)

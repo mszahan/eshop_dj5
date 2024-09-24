@@ -17,8 +17,8 @@ class VariationInline(admin.StackedInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'price', 'available', 'created', 'updated']
+    list_display = ['name', 'slug', 'available', 'created', 'updated']
     list_filter = ['available', 'created', 'updated']
-    list_editable = ['price', 'available']
+    list_editable = ['available']
     prepopulated_fields = {'slug': ('name',)}
     inlines = [GalleryInline, VariationInline ]
