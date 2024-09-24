@@ -78,16 +78,33 @@
             </a>
         </h2>
         <h1>{{product.name}}</h1>
-        <p>${{product.price}}</p>
+        
+        {% if variation %}
+        <p>${{variation.price}}</p>
+        {% else %}
+        <p>${{product.variations.all.0.price}}</p>
+        {% endif %}
+            
         <p>{{product.short_description}}</p>
 
         <h3>Variations</h3>
         <div class="variations">
-            <a href="#">Medium</a>
-            <a href="#">Large</a>
-            <a href="#">XL</a>
+            
+            {% for variety in product.variations.all %}
+            <a href="{{variety.get_absolute_url}}">{{variety.name}}</a>               
+            {% endfor %}
+                
+            
         </div>
-        <p>2535 products available</p>
+
+        <p> 
+        {% if variation %}
+            {{variation.stock}}
+        {% else %}
+            {{product.total_variation_stock}}
+        {% endif %}
+             products available</p>
+
         <p class="cart-number">2 items selected</p>
 
         <div class="action">

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Product
+from .models import Category, Product, Variation
 
 
 
@@ -17,6 +17,9 @@ def product_list(request, category_slug=None):
 
 
 
-def product_detail(request, id, slug):
+def product_detail(request, id, slug, variation_slug=None):
+    variation = None
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    return render(request, 'shop/product/detail.html', {'product': product})
+    if variation_slug:
+        variation = get_object_or_404(Variation, product=product, slug=variation_slug)
+    return render(request, 'shop/product/detail.html', {'product': product, 'variation': variation})
