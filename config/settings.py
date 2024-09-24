@@ -38,10 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop',
+    
 
     #thir party
     'tinymce',
+    'embed_video',
+    
+    #local
+    'shop',
 ]
 
 MIDDLEWARE = [

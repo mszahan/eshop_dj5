@@ -72,3 +72,8 @@ class Gallery(models.Model):
         ordering = ['order']
         verbose_name = 'gallery'
         verbose_name_plural = 'galleries'
+
+
+class Video(models.Model):
+    product = models.ForeignKey(Product, related_name='videos', on_delete=models.CASCADE)
+    url = models.URLField(help_text='do use http:// before url')

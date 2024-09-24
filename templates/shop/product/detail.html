@@ -1,5 +1,6 @@
 {% extends 'shop/base.html' %}
 {% load static %}
+{% load embed_video_tags %}
 
 
 
@@ -17,7 +18,7 @@
 {% block main %}
 <div class="product">
     
-    {% with product.galleries.all as galleries %}
+    {% with galleries=product.galleries.all videos=product.videos.all %}
         
         {% if galleries|length > 1 %}
             
@@ -37,6 +38,16 @@
                     <img src="{{gallery.image.url}}" alt="{{gallery.image.name}}">
                 </li>                   
                 {% endfor %}
+                
+                
+                {% for vid in videos %}
+                <li class="splide__slide">
+                    <!-- <img src="{% static 'img/youtube.png' %}" alt="youtube video">    -->
+                     {% video  vid.url '600x600' %}
+                </li>                   
+                    
+                {% endfor %}
+                    
                     
 
               </ul>
@@ -53,7 +64,14 @@
                   <li class="splide__slide">
                       <img src="{{gallery.image.url}}" alt="{{gallery.image.name}}">
                   </li>
+                  {% endfor %}
+
+                  {% for vid in videos %}
+                <li class="splide__slide">
+                    <img src="{% static 'img/youtube.png' %}" alt="youtube icon">   
+                </li>  
                 {% endfor %}
+
               </ul>
         </div>
         </section>
