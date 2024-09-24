@@ -101,7 +101,7 @@
         {% if variation %}
             {{variation.stock}}
         {% else %}
-            {{product.total_variation_stock}}
+            {{product.variations.all.0.stock}}
         {% endif %}
              products available</p>
 

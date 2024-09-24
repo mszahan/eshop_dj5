@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models import Sum
 from django.urls import reverse
 from tinymce.models import HTMLField
 
@@ -47,8 +46,6 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_detail', args=[self.id, self.slug])
     
-    def total_variation_stock(self):
-        return self.variations.aggregate(total=Sum('stock'))['total'] or 0
 
 
 

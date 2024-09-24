@@ -13,6 +13,7 @@ class GalleryInline(admin.StackedInline):
 
 class VariationInline(admin.StackedInline):
     model = Variation
+    prepopulated_fields = {'slug': ('name',)}
     extra = 0
 
 @admin.register(Product)
