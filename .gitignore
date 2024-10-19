@@ -1,4 +1,5 @@
 secret.json
 __pycache__/
 shop/__pycache__/
+cart/__pycache__/
 media/

@@ -11,6 +11,10 @@ class GalleryInline(admin.StackedInline):
     model = Gallery
     extra = 0
 
+@admin.register(Variation)
+class VariationAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'price', 'stock']
+
 class VariationInline(admin.StackedInline):
     model = Variation
     prepopulated_fields = {'slug': ('name',)}
