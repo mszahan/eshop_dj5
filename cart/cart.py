@@ -14,7 +14,7 @@ class Cart:
         cart = self.session.get(settings.CART_SESSION_ID)
         if not cart:
             #save and empty cart in the session
-            cart == self.session[settings.CART_SESSION_ID] = {}
+            cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
     
     def add(self, variation, quantity=1, override_quantity=False):
