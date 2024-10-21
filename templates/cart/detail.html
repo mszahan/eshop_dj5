@@ -1,0 +1,66 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'cart.css' %}">
+{% endblock style %}
+    
+
+{% block title %}
+    cart
+{% endblock title %}
+
+
+{% block main %}
+    <h1>Shopping cart</h1>
+
+
+    <div class="cart-list">
+        
+        {% for item in cart %}
+        {% with variation=item.variation  %}       
+        {% with product=variation.product %}
+        {% with product.galleries.all.0 as gallery %}
+
+        <div class="product-img">
+            <a href="{{variation.get_absolute_url}}">
+                    <img src="
+                    {% if gallery %}
+                        {{ gallery.image.url}}
+                    {% else %}
+                    {% static 'img/no_image.jpg' %}
+                    {% endif %}
+                        " alt="{{product.name}}" class="product-img">
+            </a>
+        </div>
+        <div class="product-name">
+            {{product.name}} ({{variation.name}})
+        </div>
+        <div class="product-quantity">
+            X{{item.quantity}}
+        </div>
+        <div class="remove">
+            <form action="{% url 'cart:cart_remove' variation.id %}">
+                <input type="submit" value="Remove">
+                {% csrf_token %}
+            </form>
+        </div>
+        <div class="price"> ${{item.price}} </div>
+        <div class="price"> ${{item.total_price}} </div>
+
+
+        {% endwith %}
+        {% endwith %}
+        {% endwith %} 
+        {% endfor %}
+        <div class="total">${{cart.get_total_price}}</div>
+        <div class="action-button">
+            <a href="{% url 'shop:product_list' %}">Continue shopping</a>
+            <a href="#">Check out</a>
+        </div>    
+    </div>
+
+{% endblock main %}
+
+
