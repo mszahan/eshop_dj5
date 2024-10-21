@@ -127,7 +127,7 @@
         <form action="
         {% if variation %}
             {% url 'cart:cart_add' variation.id %}
-        {% else %}
+        {% elif product.variations.all.0 %}
             {% url 'cart:cart_add' product.variations.all.0.id %}
         {% endif %}
             " method="post">
