@@ -124,9 +124,19 @@
              products available</p>
 
         <p class="cart-number">2 items selected</p>
+        <form action="
+        {% if variation %}
+            {% url 'cart:cart_add' variation.id %}
+        {% else %}
+            {% url 'cart:cart_add' product.variations.all.0.id %}
+        {% endif %}
+            " method="post">
+            {{ cart_product_form }}
+            {% csrf_token %}
+            <input type="submit" value="Add to cart">
+        </form>
 
         <div class="action">
-            <a href="#">Add to cart</a>
             <a href="#">Buy now</a>
             <a href="#">Add to favorite</a>
         </div>
