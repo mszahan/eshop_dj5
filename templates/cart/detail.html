@@ -3,7 +3,7 @@
 
 
 {% block style %}
-    <link rel="stylesheet" href="{% static 'cart.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
 {% endblock style %}
     
 
@@ -13,8 +13,7 @@
 
 
 {% block main %}
-    <h1>Shopping cart</h1>
-
+    <h1 class="cart-heading">Shopping cart</h1>
 
     <div class="cart-list">
         
@@ -37,27 +36,27 @@
         <div class="product-name">
             {{product.name}} ({{variation.name}})
         </div>
+        
+        <div class="price"> ${{item.price}} </div>
         <div class="product-quantity">
             X{{item.quantity}}
         </div>
+        <div class="price"> ${{item.total_price}} </div>
         <div class="remove">
             <form action="{% url 'cart:cart_remove' variation.id %}" method="post">
-                <input type="submit" value="Remove">
+                <input type="submit" value="Remove" class="remov_cart">
                 {% csrf_token %}
             </form>
         </div>
-        <div class="price"> ${{item.price}} </div>
-        <div class="price"> ${{item.total_price}} </div>
-
-
         {% endwith %}
         {% endwith %}
         {% endwith %} 
         {% endfor %}
         <div class="total">${{cart.get_total_price}}</div>
+       
         <div class="action-button">
-            <a href="{% url 'shop:product_list' %}">Continue shopping</a>
-            <a href="#">Check out</a>
+            <a href="{% url 'shop:product_list' %}" class="continue_shopping">Continue shopping</a>
+            <a href="#" class="checkout">Check out</a>
         </div>    
     </div>
 
