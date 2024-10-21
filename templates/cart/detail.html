@@ -41,7 +41,7 @@
             X{{item.quantity}}
         </div>
         <div class="remove">
-            <form action="{% url 'cart:cart_remove' variation.id %}">
+            <form action="{% url 'cart:cart_remove' variation.id %}" method="post">
                 <input type="submit" value="Remove">
                 {% csrf_token %}
             </form>

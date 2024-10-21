@@ -52,6 +52,11 @@
                 {% for product in products %}
                 
                 {% with product.galleries.all.0 as gallery %}
+                
+                {% with product.variations.all.0 as variation %}
+                    
+                
+                    
                 <div class="product-items">
                     <a href="{{product.get_absolute_url}}">
                         <img src="
@@ -65,10 +70,25 @@
                     <a href="{{product.get_absolute_url}}" class="product-name"> {{product.name}} </a>
                     <div class="product-bottom-bar">
                         <span class="product-price"> ${{product.variations.all.0.price}} </span>
-                        <a href="#" class="add-to-cart"><i class="bi bi-cart3 cart"></i> Add</a>
+                        
+                        {% if variation %}
+                        <form action="{% url 'cart:cart_add' variation.id %}" method="post">
+                            <span class="hide_cart_form">
+                                {{cart_product_form}}
+                            </span>
+                            <button type="submit" class="add-to-cart"><i class="bi bi-cart3 cart"></i> Add</button>
+                            {% csrf_token %}
+                        </form>
+
+                        {% else %}
+                        <a href="#" class="add-to-cart not-available"><i class="bi bi-cart3 cart">NA</i></a>
+                            
+                        {% endif %}
+                            
                     </div>
                 </div>
-                    
+
+                {% endwith %}  
                 {% endwith %}
                     
                     
