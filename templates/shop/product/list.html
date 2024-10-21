@@ -76,13 +76,13 @@
                             <span class="hide_cart_form">
                                 {{cart_product_form}}
                             </span>
-                            <button type="submit" class="add-to-cart"><i class="bi bi-cart3 cart"></i> Add</button>
+                            <button type="submit" class="add-to-cart" ><i class="bi bi-cart3 cart"></i> Add</button>
                             {% csrf_token %}
                         </form>
 
                         {% else %}
-                        <a href="#" class="add-to-cart not-available"><i class="bi bi-cart3 cart">NA</i></a>
-                            
+                        <a href="" class="not-available" disabled><i class="bi bi-cart3 cart">NA</i></a>
+                        <!-- <button  class="add-to-cart" disabled><i class="bi bi-cart3 cart"></i> NA</button> -->
                         {% endif %}
                             
                     </div>
