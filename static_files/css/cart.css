@@ -74,3 +74,18 @@
     color: rgb(14, 103, 99);
     border: 1px solid rgb(14, 103, 99);
 }
+
+.cart-upadate {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(19, 126, 141);
+    color: white;
+    border: 0px;
+}
+
+.cart-upadate:hover {
+    color: rgb(19, 126, 141);
+    background-color: white;
+    border: 1px solid rgb(19, 126, 141);
+    cursor: pointer;
+}

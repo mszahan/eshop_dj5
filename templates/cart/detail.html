@@ -39,7 +39,15 @@
         
         <div class="price"> ${{item.price}} </div>
         <div class="product-quantity">
-            X{{item.quantity}}
+            <!-- X{{item.quantity}} -->
+            <form action="{% url 'cart:cart_add' variation.id %}" method="post">
+                <span class="cart-quantity">
+                    {{ item.update_quantity_form.quantity }}
+                </span>
+                {{ item.update_quantity_form.override }}
+                <input class="cart-upadate" type="submit" value="Update">
+                {% csrf_token %}
+            </form>
         </div>
         <div class="price"> ${{item.total_price}} </div>
         <div class="remove">
