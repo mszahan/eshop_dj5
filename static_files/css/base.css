@@ -18,3 +18,143 @@ picture {
   margin: 0;
 }
 
+body{
+  padding: 5px 40px;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.top-left a, .top-right a {
+  text-decoration: none;
+  color: rgb(58, 54, 54);
+}
+
+.searchbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.lit-icon{
+  width: 5%;
+}
+
+.category, .search-text {
+  border: 0px;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.category:focus, .search-text:focus, .search-icon:focus {
+  outline: none;
+}
+
+.search-text {
+  width: 30rem;
+}
+
+.search {
+  border: 1px solid rgba(25, 129, 153, 0.638);
+  border-radius: 10px;
+  padding: 0px;
+  
+}
+
+/* .search-form {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.search-icon {
+  background-color: rgb(25, 130, 153);
+  color: white;
+  border: 0px;
+  padding: 15px;
+  border-radius: 50%;
+  margin-right: -20px;
+  border: 2px solid rgb(25, 130, 153);
+  font-size: 16px;
+}
+
+.cart-profile {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.cart-number {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 3px 5px;
+  background-color:rgb(25, 130, 153);
+  font-size: 10px;
+  color: white;
+  position: absolute;
+  left: 22px;
+  top:-3px;
+  font-weight: 700;
+
+}
+
+.cart-profile a {
+  text-decoration: none;
+}
+
+.cart-icon, .profile-icon {
+font-size: 30px;
+color: rgb(25, 130, 153);
+}
+
+.cart-profile-text {
+  color: rgb(22, 20, 20);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-block: 1px solid rgb(230, 220, 220);
+  padding-block: 20px;
+}
+
+.category-button {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid rgb(25, 130, 168);
+}
+
+.category-button:hover {
+  background-color: rgb(31, 162, 167);
+  color: white;
+  border: 0px;
+  cursor: pointer;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link, .call-big {
+  text-decoration: none;
+  font-size: 18px;
+  color: rgb(49, 46, 46);
+  font-weight: 600;
+}
+
+.nav-link:hover, .call-big:hover {
+  color: rgb(25, 130, 153);
+}

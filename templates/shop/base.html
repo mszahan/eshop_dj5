@@ -17,9 +17,81 @@
     <title>{% block title %} {% endblock title %} | LoopersShop</title>
   </head>
   <body>
-    <div class="top-header">Top Header</div>
-    <div class="searchbar">SearchBar</div>
-    <div class="navbar">Navbar</div>
+    <!-- Top header -->
+    <div class="top-header">
+      <div class="top-left">
+        <a href="#">About us</a> |
+        <a href="#">Track order</a>
+      </div>
+      <div class="top-right">
+        <a href="#">Call us 099562</a>
+      </div>
+    </div>
+
+    <!-- search header  -->
+    <div class="searchbar">
+      <img src="{% static 'img/lit.png' %}" alt="lit icon" class="lit-icon">
+      <div class="search">
+        <form action="" class="search-form">
+          <select name="category" id="category" class="category">
+            <option value="all">All categories</option>
+            <option value="fast food">Fast food</option>
+            <option value="Indian food">Indian food</option>
+            <option value="Chinese food">Chinese food</option>
+            <option value="Italian food">Italian food</option>
+          </select>
+          <input type="text" placeholder="search" class="search-text">
+          <button type="submit" class="search-icon"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+      <div class="cart-profile">
+        <a href="#">
+          <span class="cart-icon">
+            <i class="bi bi-cart3 cart"></i>
+          </span>
+          <span class="cart-number">0</span>
+          <span class="cart-profile-text">Cart</span>
+        </a>
+        <a href="#" > 
+          <span class="profile-icon"> 
+            <i class="bi bi-person"></i> 
+          </span> 
+          <span class="cart-profile-text">Profile</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- nav bar  -->
+    <div class="navbar">
+      <div>
+        <button class="category-button">Browse all categories</button>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Career</a>
+          </li>
+          
+        </ul>
+      </nav>
+      <div>
+        <a href="" class="call-big">call us 09645464</a>
+      </div>
+    </div>
+
+
     <div class="main">{% block main %} {% endblock main %}</div>
 
     {% block bottom %} {% endblock bottom %}
