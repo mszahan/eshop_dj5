@@ -39,11 +39,14 @@ body{
   align-items: center;
 }
 
-
-
-.lit-icon{
+.nav-logo {
   width: 5%;
 }
+
+.lit-icon{
+  width: 90%;
+}
+
 
 .category, .search-text {
   border: 0px;
@@ -119,6 +122,7 @@ color: rgb(25, 130, 153);
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
   border-block: 1px solid rgb(230, 220, 220);

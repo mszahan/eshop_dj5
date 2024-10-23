@@ -30,7 +30,11 @@
 
     <!-- search header  -->
     <div class="searchbar">
-      <img src="{% static 'img/lit.png' %}" alt="lit icon" class="lit-icon">
+      <div class="nav-logo">
+        <a href="/">
+          <img src="{% static 'img/lit.png' %}" alt="lit icon" class="lit-icon">
+        </a>
+      </div>
       <div class="search">
         <form action="" class="search-form">
           <select name="category" id="category" class="category">
@@ -45,11 +49,11 @@
         </form>
       </div>
       <div class="cart-profile">
-        <a href="#">
+        <a href="{% url 'cart:cart_detail' %}">
           <span class="cart-icon">
             <i class="bi bi-cart3 cart"></i>
           </span>
-          <span class="cart-number">0</span>
+          <span class="cart-number">{{cart_context|length}}</span>
           <span class="cart-profile-text">Cart</span>
         </a>
         <a href="#" > 
@@ -68,6 +72,9 @@
       </div>
       <nav class="nav">
         <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/" class="nav-link">Home</a>
+          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">Products</a>
           </li>

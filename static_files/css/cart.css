@@ -8,6 +8,7 @@
 .cart-list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    align-items: center;
     padding: 10px;
     gap:10px;
     width: 80%;
