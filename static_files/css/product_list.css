@@ -85,10 +85,11 @@
 .not-available {
     font-size: 16px;
     font-weight: 500;
-    background-color: rgb(134, 60, 78);
+    background-color: rgb(211, 204, 204);
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 5px;
     color: white;
     border: 0px;
+    cursor: default;
 }

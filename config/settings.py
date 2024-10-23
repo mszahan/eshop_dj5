@@ -40,13 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
 
-    #thir party
+    #third party
     'tinymce',
     'embed_video',
     
     #local
     'cart',
     'shop',
+    'orders'
 ]
 
 MIDDLEWARE = [
