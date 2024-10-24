@@ -1,0 +1,41 @@
+
+{% extends 'shop/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/order_creat.css' %}">
+{% endblock style %}
+    
+
+{% block title %}
+    Checkout
+{% endblock title %}
+
+
+{% block main %}
+    <h1>Your orders to checkout</h1>
+    <div class="chckout-form">
+        <form method="post">
+            {{ form.as_p }}
+            <p><input type="submit" value="Place order"></p>
+            {% csrf_token %}
+        </form>
+    </div>
+    <div class="order-info">
+        <ul>
+            {% for item in cart %}
+                <li class="checkout-items">
+                    <span>
+                        {{ item.quantity }}X {{item.variation.product.name}} ({{item.variation.name}})
+                    </span>
+                    <span class="checkout-price">{{ item.total_price }}</span>
+                </li>
+            {% endfor %}
+                
+        </ul>
+        <p class="checkout-total">Total: {{cart.get_total_price}}</p>
+    </div>
+{% endblock main %}
+    
+    

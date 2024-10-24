@@ -1,0 +1,21 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/order_creat.css' %}">
+{% endblock style %}
+    
+
+{% block title %}
+    Order placed
+{% endblock title %}
+    
+
+
+{% block main %}
+    <h1>Cogratulations your order has been placed</h1>
+    <p>Your order id is {{ order.id }}</p>
+    <p>You will receive your product within 3 working days or less</p>
+{% endblock main %}
+    
