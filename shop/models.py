@@ -57,7 +57,7 @@ class Variation(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return self.name
+        return f'{self.product.name}-{self.name}'
     
     def get_absolute_url(self):
         return reverse('shop:product_variation', args=[self.product.id, self.product.slug, self.slug])
@@ -72,8 +72,14 @@ class Gallery(models.Model):
         ordering = ['order']
         verbose_name = 'gallery'
         verbose_name_plural = 'galleries'
+    
+    def __str__(self):
+        return self.name
 
 
 class Video(models.Model):
     product = models.ForeignKey(Product, related_name='videos', on_delete=models.CASCADE)
     url = models.URLField(help_text='do use http:// before url')
+
+    def __str__(self):
+        return f'video-{self.id}'
